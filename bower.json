@@ -1,0 +1,17 @@
+{
+  "name": "school_management",
+  "description": "This web application will maintain a school decorum. incoming teachers and their roles. students attendance history and performance of students",
+  "main": "index.js",
+  "authors": [
+    "avinash <avinash.bagde@medibox.in>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/avinash683/schoolManagement",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
