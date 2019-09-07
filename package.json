@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/avinash683/schoolManagement/issues"
   },
-  "homepage": "https://github.com/avinash683/schoolManagement#readme"
+  "homepage": "https://github.com/avinash683/schoolManagement#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.6.13",
+    "require-dir": "^1.2.0"
+  }
 }
