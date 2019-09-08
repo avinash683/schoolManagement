@@ -1,0 +1,28 @@
+<div class="col-md-6 col-md-offset-3">
+    <h2>Register</h2>
+    <div class="form-group">
+        <div class="col" align="center">
+            <div>
+                <label>Full name : </label>
+                <input type="text" name="firstName" id="firstName" ng-model="queryCriteria.fullName">
+            </div>
+            <div>
+                <label>Email Id : </label>
+                <input type="text" name="email" id="email" ng-model="queryCriteria.emailId">
+            </div>
+            <div>
+                <label>Mobile number : </label>
+                <input type="number" limit="10" name="mobile" id="mobileNumber" ng-model="queryCriteria.mobileNumber">
+            </div>
+            <div>
+                <label>Password : </label>
+                <input type="password" name="Password" id="Password" ng-model="queryCriteria.password">
+            </div>
+            <div>
+                <button class="btn btn-primary" ng-click="registerUser()">Register</button>
+                <a class="btn btn-link">Cancel</a>
+            </div>
+        </div>
+
+    </div>
+</div>

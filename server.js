@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({
 
 //check how path works
 app.use(express.static(path.join(__dirname, 'client')));
+
 app.use(allowCrossDomain);
 
 var router = express.Router();

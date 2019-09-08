@@ -1,20 +1,20 @@
 {
   "name": "school_management",
-  "description": "This web application will maintain a school decorum. incoming teachers and their roles",
+  "description": "This web application will maintain a school decorum. incoming teachers and their roles.",
   "main": "index.js",
   "authors": [
     "avinash <avinash.bagde@medibox.in>"
   ],
   "license": "ISC",
   "homepage": "https://github.com/avinash683/schoolManagement",
-  "dependencies": {
+ "dependencies": {
     "bootstrap": "3.0.0",
     "jquery" : "latest",
     "angular" : "1.6.5",
     "angular-ui-router":"1.0.3",
     "moment": "latest"
-  },
-  "ignore": [
+  }, 
+ "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",

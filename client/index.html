@@ -1,0 +1,49 @@
+<html >
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="avinash bagde" />
+    <title>school Management</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../css/styleSheet.css">
+    <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
+    <script src="../lib/angular/angular.min.js"></script>
+    <script src="../lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../lib/moment/min/moment.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="./modules/Authentication/index.js"></script>
+    <script src="./modules/Authentication/controllers/auth.js"></script>
+    <script src="./modules/Authentication/services/authenticationService.js"></script>
+    <script src="./modules/home/index.js"></script>
+    <script src="./modules/home/controllers/homeController.js"></script>
+    <script src="./modules/home/services/homeService.js"></script>
+
+    <script src="./modules/common/commonService.js"></script>
+
+    <script src="./modules/Dashboard/index.js"></script>
+    <script src="./modules/Dashboard/controllers/dashboard.js"></script>
+    <script src="./modules/Dashboard/services/dashboardService.js"></script>
+</head>
+<body ng-app="schoolManagement" ng-controller="appCtrl">
+<div align="center" class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" ui-sref="app.home">School Managament</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a ui-sref="app.login">Login</a></li>
+                <li class="active"><a ui-sref="app.register">Register</a></li>
+
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div ui-view></div>
+    </div>
+</div>
+</body>
+</html>

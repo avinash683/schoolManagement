@@ -2,8 +2,10 @@
 var mongoose = require('mongoose');
 var ObjectId = require('mongoose').Types.ObjectId;
 var schema = new mongoose.Schema({
-     name : {type: String},
+     fullName : {type: String},
+     emailId : {type : String},
      mobileNumber : {type: Number},
+     password: {type : String},
      address : {type: String},
      updatedBy: {type: mongoose.Schema.Types.ObjectId},
      updatedAt: {type: Date},
