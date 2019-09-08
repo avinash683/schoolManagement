@@ -2,12 +2,28 @@
 'use strict';
 
 var app = angular.module('dashboardMain', [])
-app.controller('dashboardCtrl', function($scope, $http, $state, Common) {
-  console.log('inside the dashboard controller - - - - -',JSON.stringify($scope.userData));
-  var loginData  = localStorage.getItem('loginData');
-       console.log('loginData',JSON.stringify(loginData));
+app.controller('dashboardCtrl', function($scope, $http, $state, Common,$rootScope) {
+    console.log('inside dashboard controller');
+    var userData = JSON.parse(localStorage.getItem('userData'));
+    function checkUserLogin(){
+      if(userData!=null){
+          $rootScope.isLoggedIn = true;
+          $state.go('app.dashboard');
+        }else{
+          $state.go('app.home');
+          localStorage.removeItem('userData')
+          $rootScope.isLoggedIn = false;
+      }
+  }
+  checkUserLogin();
 
-      Common.getLoginDetails(function(response){
-        console.log('response-- ',JSON.stringify(response));
-      })
-  });
+
+/*
+  $scope.addProfessor = function(){
+
+  }$scope.addStudents = function(){
+
+  }$scope.addClasses = function(){
+
+  }*/
+});

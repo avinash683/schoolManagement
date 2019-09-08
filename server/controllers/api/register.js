@@ -12,7 +12,8 @@ function registerUser(req,res){
                 "fullName":reqParam.fullName ,
                 "password":reqParam.password ,
                 "mobileNumber": reqParam.mobileNumber,
-                "emailId" : reqParam.emailId
+                "emailId" : reqParam.emailId,
+                "userType" : reqParam.userType
           }
 
          Users.create(createUserData,function(err, response){

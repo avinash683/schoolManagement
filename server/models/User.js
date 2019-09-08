@@ -9,6 +9,7 @@ var schema = new mongoose.Schema({
      address : {type: String},
      updatedBy: {type: mongoose.Schema.Types.ObjectId},
      updatedAt: {type: Date},
+     userType : {type: String,  enum: ['ADMIN', 'STUDENT', 'TEACHER'], default: 'ADMIN'},
      createdDate: {type: Date, require: true, default: Date.now}
 })
 

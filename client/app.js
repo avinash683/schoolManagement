@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('schoolManagement', ['ui.router','appMain','registerMain','Dashboard','commonServices','ngStorage']);
+var app = angular.module('schoolManagement', ['ui.router','appMain','registerMain','Dashboard','commonServices']);
 
 app.config(['$stateProvider','$urlRouterProvider', function ($stateProvider, $urlRouterProvider){
       $stateProvider.state('app', {
@@ -10,18 +10,26 @@ app.config(['$stateProvider','$urlRouterProvider', function ($stateProvider, $ur
       $urlRouterProvider.otherwise("/app/home")
 }])
 
-app.controller('appCtrl', function ($state,$scope,Common) {
+app.controller('appCtrl', function ($state,$scope,Common,$rootScope) {
+       $rootScope.isLoggedIn = false;
+       var userData = JSON.parse(localStorage.getItem('userData'));
+       console.log('inside app control',JSON.stringify(userData));
 
-     Common.getLoginDetails(function(loginResponse){
-        if(loginResponse!== null){
-            //logged in
-            console.log('logged in'+JSON.stringify(loginResponse));
-            $state.go('app.dashboard');
-        }else{
-            console.log('not logged in ')
-           $state.go('app.home');
-        }
-     })
+       function checkUserLogin(){
+           if(userData!=null){
+               $rootScope.isLoggedIn = true;
+               $state.go('app.dashboard');
+             }else{
+               $state.go('app.home');
+               localStorage.removeItem('userData')
+               $rootScope.isLoggedIn = false;
+           }
+       }
+       checkUserLogin();
 
-
+       $scope.logout = function(){
+          $state.go('app.home');
+          localStorage.removeItem('userData')
+          $rootScope.isLoggedIn = false;
+       }
 });
