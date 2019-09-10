@@ -6,15 +6,13 @@ function registerUser(req,res){
           status : false
     };
     var reqParam = req.body;
-
-   if(reqParam.type === 'register'){
-         var createUserData =  {
-                "fullName":reqParam.fullName ,
-                "password":reqParam.password ,
-                "mobileNumber": reqParam.mobileNumber,
-                "emailId" : reqParam.emailId,
-                "userType" : reqParam.userType
-          }
+    var createUserData =  {
+            "fullName":reqParam.fullName ,
+            "password":reqParam.password ,
+            "mobileNumber": reqParam.mobileNumber,
+            "emailId" : reqParam.emailId,
+            "userType" : reqParam.userType
+     }
 
          Users.create(createUserData,function(err, response){
                  if (response){
@@ -27,8 +25,15 @@ function registerUser(req,res){
                     res.json(result);
                 }
            })
-   }else{
-      var query = {
+   }
+}
+
+function loginUser(req,res){
+  var result = {
+         status : false
+   };
+   var reqParam = req.body;
+   var query = {
         emailId : reqParam.emailId
       }
       console.log('registerUser called',JSON.stringify(req.body));
@@ -53,12 +58,6 @@ function registerUser(req,res){
                 res.json(result);
             }
        })
-   }
-
-}
-
-function loginUser(req,res){
-
 }
 
 module.exports.registerUser = registerUser;

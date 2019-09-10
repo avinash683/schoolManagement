@@ -1,21 +1,62 @@
+<!--
 <div class="container">
     <div class="row">
         <div class="col col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <ul class="list-group">
-                <li class="active list-group-item btn btn-primary" type="button" ng-click="addProfessor()">
+                <li class="active list-group-item btn btn-primary" type="button">
                    Add Professor
                 </li>
-                <li class="active list-group-item btn btn-primary" type="button" ng-click="addStudents()">
+                <li class="active list-group-item btn btn-primary" type="button">
                     Add Students
                 </li>
-                <li class="active list-group-item btn btn-primary" type="button" ng-click="addClasses()">
+                <li class="active list-group-item btn btn-primary" type="button">
                     Add Class
                 </li>
             </ul>
         </div>
         <div class="col col-xs-12 col-sm-12 col-md-8 col-lg-8">
-
+            <div class="container">
+                <div ui-view></div>
+            </div>
         </div>
     </div>
 
+</div>
+-->
+
+<div class="tab">
+    <button class="tablinks" ng-click="selectActions(event, 'Teacher')" id="defaultOpen">Add Teacher</button>
+    <button class="tablinks" ng-click="selectActions(event, 'Class')">Add Class</button>
+    <button class="tablinks" ng-click="selectActions(event, 'Student')">Add Student</button>
+</div>
+
+<div id="Teacher" class="tabcontent">
+    <h3>Add Teacher</h3>
+    <p>
+    <div class="form-group">
+        <div class="col" align="center">
+            <div>
+                <label>Full name : </label>
+                <input type="text" name="firstName" id="firstName" ng-model="queryCriteria.fullName">
+            </div>
+            <div>
+                <label>Email Id : </label>
+                <input type="text" name="email" id="email" ng-model="queryCriteria.emailId">
+            </div>
+            <div>
+                <label>Mobile number : </label>
+                <input type="number" limit="10" name="mobile" id="mobileNumber" ng-model="queryCriteria.mobileNumber">
+            </div>
+            <div>
+                <label>Password : </label>
+                <input type="password" name="Password" id="Password" ng-model="queryCriteria.password">
+            </div>
+            <div>
+                <button class="btn btn-primary" ng-click="addProfessor()">Add Professor</button>
+                <a class="btn btn-link">Cancel</a>
+            </div>
+        </div>
+
+    </div>
+    </p>
 </div>
